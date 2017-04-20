@@ -12,4 +12,8 @@
 #### 4.The introduction to Reactive Programming you've been missing
 -https://github.com/RossSong/RossSong.github.io/blob/master/4.md
 
-#### 5.Getting Started With RxSwift and RxCocoa  -https://www.raywenderlich.com/138547/getting-started-with-rxswift-and-rxcocoa
+#### 5.Getting Started With RxSwift and RxCocoa  
+-https://github.com/RossSong/RossSong.github.io/blob/master/5.md
+
+#### 6.ReactiveCocoa vs RxSwift
+-https://github.com/RossSong/RossSong.github.io/blob/master/6.md
