@@ -1,4 +1,4 @@
-# RxSwift, MVVM 관련 번역
+# Swift, RxSwift, MVVM 관련 번역
 
 #### 1.A practical MVVM example in Swift – Part 1
 -https://github.com/RossSong/RossSong.github.io/blob/master/1.md
