@@ -18,7 +18,7 @@
 대학교 시절에 이미지 프로세싱을 조금 접해 봤었던 입장에서 보니 한번 만들어 보면 재미 있겠다는 생각을 하게 되었습니다.
 그래서 구글링을 잠깐 해보니 Face Tracking 기술들이 많이 발전되었고, 오픈 소스로 많이 공개되어 있었습니다.
 [openCV](http://opencv.org)에 Object Detecting 기술 자체가 포함되어 있었고,
-여러 플랫폼에서 좀더 쉽게 멀티미디어 처리를 쉽게 해주는 [openFrameworks](https://www.google.co.kr/#q=openframeworks) 라는 것도 알게 되었습니다. OpeCV를 이용해서 동영상에서 얼굴을 찾고 그 얼굴의 Face Model 까지 생성해주는 [FaceTracker](https://github.com/kylemcdonald/FaceTracker) 라는 것도 있었습니다.
+여러 플랫폼에서 좀더 쉽게 멀티미디어 처리를 쉽게 해주는 [openFrameworks](https://www.google.co.kr/#q=openframeworks) 라는 것도 알게 되었습니다. OpeCV를 이용해서 동영상에서 얼굴을 찾고 그 얼굴의 Face Mesh 까지 생성해주는 [FaceTracker](https://github.com/kylemcdonald/FaceTracker) 라는 것도 있었습니다.
 
 FaceTracker 은 OpenCV 의 Object Detecting 기술을 이용해서 얼굴, 눈, 코, 입을 찾고 찾은 점들을 이용해서 얼굴 면(Face Mesh)을 생성하는 기능을 제공합니다. OpenFrameworks의 [addon](http://ofxaddons.com/categories) 으로 사용될 수 있는 [ofxFaceTracker](https://github.com/kylemcdonald/ofxFaceTracker) 도 있습니다.
 OpenFrameworks 를 함께 사용하면 비디오 처리라던지, Face Mesh 대한 텍스쳐링을 좀 더 손쉽게 할 수 있습니다.
