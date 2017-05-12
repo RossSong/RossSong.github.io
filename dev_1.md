@@ -115,10 +115,10 @@ snow 나 b612는 harr cascade 가 아닌 요즘 유행하는 TensorFlow 를 이�
 OpenvCV2 까지는 (opencv_)harrtraining 이라는 툴이 제공되고, OpenCV2, OpenCV2 (opencv_)traincascade 라는 툴이 함께 제공됩니다. harrtraining 은 학습시키는데 시간이 많이 걸리는데, traincascade 는 병렬 방식으로 개선되어 학습시간이 개선 되었습니다.
 두 툴에서 만들어지는 학습된 모델 xml 파일의 형식이 달라서 호환이 안되는 것 같긴합니다.(제가 잘 몰라서 그럴 수도 있겠네요..)
 
-학습 관련 정보
-http://darkpgmr.tistory.com/70
-http://docs.opencv.org/2.4/doc/user_guide/ug_traincascade.html
-http://note.sonots.com/SciSoftware/haartraining.html
+학습 관련 정보  
+[http://darkpgmr.tistory.com/70](http://darkpgmr.tistory.com/70)  
+[http://docs.opencv.org/2.4/doc/user_guide/ug_traincascade.html](http://docs.opencv.org/2.4/doc/user_guide/ug_traincascade.html)  
+[http://note.sonots.com/SciSoftware/haartraining.html](http://note.sonots.com/SciSoftware/haartraining.html)  
 
 인식률을 높이기 위해서 학습 관련해서 조금씩 실험을 하고 있습니다만, 성능이 조금 떨어지는 낡은(?) 기기와 샘플데이터를 직접 만들어야 하는
 노가다등으로 인해 개선하려면 시간이 좀 더 필요할 것으로 보입니다.
