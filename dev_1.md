@@ -3,7 +3,8 @@
 이글은 [Snapchat](https://itunes.apple.com/kr/app/snapchat/id447188370?mt=8), [Snow](https://itunes.apple.com/kr/app/snow-selfie-motion-sticker-fun-camera/id1022267439?mt=8) 등에 얼굴을 인식하여 꾸미거나 변형시키는 기능을 가지는 장난감 iOS 앱을 만들어 본 경험에 대한 공유 글입니다.
 
 이 앱은 OpenFramework(v0.9.8_ios_release) 과 OpenCV 를 이용하여 만들어 졌습니다.
-이 앱의 소스는 [github](https://github.com/RossSong/imitationSnow/blob/master/README.md)에 있습니다.
+
+이 앱의 소스는 [github](https://github.com/RossSong/imitationSnow/blob/master/README.md) 에 있습니다.
 
 <div>
 <image width=200 height=300 src="https://github.com/RossSong/RossSong.github.io/blob/master/result.gif?raw=true"/>
@@ -34,8 +35,8 @@ ofxFaceTracker-iOS 를 사용하려면, [iOS 용 OpenFrameworks](http://openfram
 app/myApps 경로는 OpenFrameworks 프로젝트를 새로 생성하면 프로젝트가 생성되는 경로입니다.
 
 아래의 그림처럼 얼굴을 찾고 Face Model 까지는 잘 찾아주기는 합니다.
-<image width=200 src="https://github.com/RossSong/RossSong.github.io/blob/master/thumb_4.jpg?raw=true"/>
 
+<image width=200 src="https://github.com/RossSong/RossSong.github.io/blob/master/thumb_4.jpg?raw=true"/>
 
 일단 되는 것은 확인했는데, 이 소스가 일반적인 iOS 앱 개발에 사용되는 Objective-C 나 Swift 형태가 아닌 전체가 C/C++ 소스로 되어 있습니다. 그리고 OpenFrameworks 을 사용하고 있어서, 찾은 Face Model에 어떻게 텍스쳐링 입힐지, 스티커 사진등을 선택할 수 있는 UI는 어떻게 연결시켜야 할지 막막했습니다.
 
