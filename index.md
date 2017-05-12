@@ -29,3 +29,8 @@
 
 #### 10.Protocol Oriented Programming View in Swift3
 -https://github.com/RossSong/RossSong.github.io/blob/master/11.md
+
+
+# 기술 자료
+#### Snapchat, Snow 짝퉁 개발기
+-https://github.com/RossSong/RossSong.github.io/blob/master/dev_1.md
