@@ -1,9 +1,7 @@
 # Snapchat, Snow 짝퉁 개발기
 
 이글은 [Snapchat](https://itunes.apple.com/kr/app/snapchat/id447188370?mt=8), [Snow](https://itunes.apple.com/kr/app/snow-selfie-motion-sticker-fun-camera/id1022267439?mt=8) 등에 얼굴을 인식하여 꾸미거나 변형시키는 기능을 가지는 장난감 iOS 앱을 만들어 본 경험에 대한 공유 글입니다.
-
 이 앱은 OpenFramework(v0.9.8_ios_release) 과 OpenCV 를 이용하여 만들어 졌습니다.
-
 이 앱의 소스는 [github](https://github.com/RossSong/imitationSnow/blob/master/README.md) 에 있습니다.
 
 <div>
