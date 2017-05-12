@@ -32,11 +32,11 @@ OpenFrameworks 를 함께 사용하면 비디오 처리라던지, Face Mesh 대�
 ofxFaceTracker-iOS 를 사용하려면, [iOS 용 OpenFrameworks](http://openframeworks.cc/versions/v0.9.8/of_v0.9.8_ios_release.zip)를 일단 받아서 압축을 풀고, 하위 폴더 중에 apps/myApps 아래에 ofxFaceTracker-iOS 를 폴더를 넣고 xcode 프로젝트를 열어서 실행해줘야 합니다.
 app/myApps 경로는 OpenFrameworks 프로젝트를 새로 생성하면 프로젝트가 생성되는 경로입니다.
 
-아래의 그림처럼 얼굴을 찾고 Face Model 까지는 잘 찾아주기는 합니다.
+아래의 그림처럼 얼굴을 찾고 Face Mesh 까지는 잘 찾아주기는 합니다.
 
 <image width=200 src="https://github.com/RossSong/RossSong.github.io/blob/master/thumb_4.jpg?raw=true"/>
 
-일단 되는 것은 확인했는데, 이 소스가 일반적인 iOS 앱 개발에 사용되는 Objective-C 나 Swift 형태가 아닌 전체가 C/C++ 소스로 되어 있습니다. 그리고 OpenFrameworks 을 사용하고 있어서, 찾은 Face Model에 어떻게 텍스쳐링 입힐지, 스티커 사진등을 선택할 수 있는 UI는 어떻게 연결시켜야 할지 막막했습니다.
+일단 되는 것은 확인했는데, 이 소스가 일반적인 iOS 앱 개발에 사용되는 Objective-C 나 Swift 형태가 아닌 전체가 C/C++ 소스로 되어 있습니다. 그리고 OpenFrameworks 을 사용하고 있어서, 찾은 Face Mesh 에 어떻게 텍스쳐링 입힐지, 스티커 사진등을 선택할 수 있는 UI는 어떻게 연결시켜야 할지 막막했습니다.
 
 그래서 일단 무식하게 도전했습니다. 일단 OpenFrameworks를 잘 모르는 상태였기 때문에, ofxFaceTracker-iOS 를 온전히 사용할 수 없다고 판단 했습니다. 그래서 ofxFaceTracker-iOS 를 분석해서 일단 FaceTracker과 ofxFaceTracker에서 사용되는 점과 Mesh 들에 대해서 처리하는 부분들을 OpenFrameworks 에서 적당히 잘라서 뜯어냈습니다.(OpenFrameworks 내부 컴포넌트들이 서로 많이 엉켜붙어 있어서, 쉽고 깔끔하게 떼어내기가 불가능했습니다. 결합도가 너무 강한.. ㅡㅜ. 우여곡절 끝에 어찌어찌 동작할 정도로 뜯어냈습니다.)
 
@@ -50,7 +50,7 @@ app/myApps 경로는 OpenFrameworks 프로젝트를 새로 생성하면 프로�
 그래서 다시 구글링을 시작했습니다. 그렇게 해서, OpenFrameworks project generator(OpenFrameworks를 쉽게 사용할 수 있도록 프로젝트 생성을 도와 주는 툴)를 이용하는 방법과 OpenFrameworks와 viewController들을 어떻게 연결시켜야 하는지는 알게 되었습니다.
 (앞에서 했던 대삽질들은 OpenFrameworks 구조와 사용법을 이해하는데 도움이 많이 되었습니다. 전화위복이라고 할까요... ㅡㅜ)
 
-그런데 viewController 를 이용해서 UI 를 연결시키는 것을 해결하고 나니, OpenFrameworks을 통해서 그려지던 Face Model과 비디오 영상들을 어떻게 불러와서 viewController 위에 그려줘야 할지 다시 막막해졌습니다.
+그런데 viewController 를 이용해서 UI 를 연결시키는 것을 해결하고 나니, OpenFrameworks을 통해서 그려지던 Face Mesh 와 비디오 영상들을 어떻게 불러와서 viewController 위에 그려줘야 할지 다시 막막해졌습니다.
 
 OpenFrameworks 는 기본적으로 모든 Drawing을 OpenGL을 통해서 하게 되어 있었습니다. 유니티처럼 OpenGL을 그릴 수 있는 컨테이너에 해당하는 window를 하나 올려 놓고 그 위에 OpenGL로 모든 걸 다 그리고도록 되어 있었습니다. 그래서 그 위에 viewController 를 올려 버리니 다시 그려지던 화면을 볼 수 없게 된 것은 당연한 것이었지요.
 
