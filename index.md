@@ -30,6 +30,8 @@
 #### 10.Protocol Oriented Programming View in Swift3
 -https://github.com/RossSong/RossSong.github.io/blob/master/11.md
 
+#### 11.Understanding Publish, Connect, RefCount and Share in RxSwift
+-https://github.com/RossSong/RossSong.github.io/blob/master/12.md
 
 # 기술 자료
 #### Snapchat, Snow 짝퉁 개발기
