@@ -8,7 +8,6 @@
 <image width=200 height=300 src="https://github.com/RossSong/RossSong.github.io/blob/master/result.gif?raw=true"/>
 <image width=200 height=300 src="https://github.com/RossSong/RossSong.github.io/blob/master/thumb_1.jpg?raw=true"/>
 <image width=200 height=300 src="https://github.com/RossSong/RossSong.github.io/blob/master/thumb_2.jpg?raw=true"/>
-<image width=200 height=300 src="https://github.com/RossSong/RossSong.github.io/blob/master/thumb_3.jpg?raw=true"/>
 </div>
 
 ## FaceTracker 발견!
