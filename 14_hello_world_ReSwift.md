@@ -84,7 +84,8 @@ self.buttonGo.rx.tap
         }).disposed(by: disposeBag)
 ```
 
-9.appReducer 에서 처리된 Action 의 결과 State 를 UI 로 반영
+9.appReducer 에서 처리된 Action 의 결과 State 를 UI 로 반영   
+(StoreSubscriber를 상속한 ViewController 의 멤버 함수로 정의)
 
 ```
 func newState(state: AppState) {
