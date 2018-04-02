@@ -6,8 +6,10 @@ ReSwift 로 "Hello World" 해보기
 
 2.Carthage 이용을 위한 cartfile 작성
 
+```
 github "ReactiveX/RxSwift" ~> 4.0   
 github "ReSwift/ReSwift"
+```
 
 3.Carthage 를 이용해서 framework 파일 받기
 carthage update --platform iOS
@@ -15,15 +17,19 @@ carthage update --platform iOS
 4.Carthage 를 통해서 받아온 framework 파일을 프로젝트 Build Phrases 에서 Run Script 를 추가 하여 파일을 복사하고,
 /usr/local/bin/carthage copy-frameworks   
 
+```
 $(SRCROOT)/Carthage/Build/iOS/RxSwift.framework   
 $(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework   
 $(SRCROOT)/Carthage/Build/iOS/ReSwift.framework   
+```
 
 Link Binary With Libraries 에 framework 파일 추가
 
+```
 RxSwift.framework   
 RxCocoa.framework   
 ReSwift.framework   
+```
 
 5.ReSwift 사용을 위한 State, Action, appReducer 정의
 ```
