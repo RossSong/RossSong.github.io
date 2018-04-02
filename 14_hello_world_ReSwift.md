@@ -15,7 +15,9 @@ github "ReSwift/ReSwift"
 carthage update --platform iOS
 
 4.Carthage 를 통해서 받아온 framework 파일을 프로젝트 Build Phrases 에서 Run Script 를 추가 하여 파일을 복사하고,
+```
 /usr/local/bin/carthage copy-frameworks   
+```
 
 ```
 $(SRCROOT)/Carthage/Build/iOS/RxSwift.framework   
