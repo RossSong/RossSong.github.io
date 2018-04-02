@@ -100,7 +100,7 @@ override func viewDidLoad() {
 }
 ```
 
-12.View 를 상속한 ViewController 가 ViewReactor 에 Bind 되도록 bind 함수 정의
+12.View 를 상속한 ViewController 가 ViewReactor 에 Bind 되도록 bind 함수 정의   
 (View 를 상속함으로써 생성시 bind 함수가 내부적으로 자동으로 호출된다.)
 
 ```
