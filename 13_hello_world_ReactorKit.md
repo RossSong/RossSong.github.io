@@ -22,7 +22,8 @@ carthage update --platform iOS
 ```
 $(SRCROOT)/Carthage/Build/iOS/RxSwift.framework   
 $(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework   
-$(SRCROOT)/Carthage/Build/iOS/ReactorKit.framework   
+$(SRCROOT)/Carthage/Build/iOS/ReactorKit.framework  
+$(SRCROOT)/Carthage/Build/iOS/ReactorKitRuntime.framework     
 ```
 
 Link Binary With Libraries 에 framework 파일 추가
@@ -31,6 +32,7 @@ Link Binary With Libraries 에 framework 파일 추가
 RxSwift.framework   
 RxCocoa.framework   
 ReactorKit.framework   
+ReactorKitRuntime.framework
 ```
 
 5.Reactor 정의 - Reactor 를 상속한 ViewReactor 를 생성
