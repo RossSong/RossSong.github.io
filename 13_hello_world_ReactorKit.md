@@ -38,6 +38,8 @@ ReactorKitRuntime.framework
 5.Reactor 정의 - Reactor 를 상속한 ViewReactor 를 생성
 
 ```
+import ReactorKit
+
 class ViewReactor: Reactor {
 }
 ```
