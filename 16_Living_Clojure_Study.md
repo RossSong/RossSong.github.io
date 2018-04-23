@@ -50,7 +50,7 @@ lein ring server
 curl -i http://localhost:3000/cheshire-cat
 ```
 
-다음과 같은 json 이 return 된다.
+다음과 같은 JSON 이 return 된다.
 
 ```
 HTTP/1.1 200 OK
