@@ -66,3 +66,49 @@ Server: Jetty(7.6.13.v20130916)
 {"name":"Cheshire cat","status":"grinning"}
 ```
 
+### Ring-JSON 으로 JSON 을 리턴하는 Rest API 만들기
+
+Cheshire Library 를 이용하면 JSON 처리를 할 수 있지만, http response status header body 등을 수작업으로 만들어 줘야 하는데, Ring-JSON 을 사용하면 쉽게 만들 수 있다.   
+
+project.clj 파일에서 Cheshire 를 제거하고, Ring-JSON 을 추가한다.   
+```
+[ring/ring-json "0.3.1"]
+```
+src/cheshire_cat/handler.clj 에서 ring-json 과 response 에 대한 라이브러리 참조를 추가한다.   
+```
+[ring.middle.json :as ring-json]
+[ring.util.response :as rr]
+```
+cheshire-cat 에 대한 response 를 다음과 같이 수정한다.
+```
+(GET "/cheshire-cat" []
+    (rr/response {:name "Chesire Cat" :status :grining}))
+```   
+
+그리고 def app 을 다음과 같이 수정한다.
+```
+(def app
+    (-> app-routes
+        (wrap-defaults site-defaults)
+        (ring-json/wrap-json-response)))
+```
+
+서버를 다시 실행시키고, "/cheshire-cat"을 다시 요청해 본다.
+```
+lein ring server
+curl -i http://localhost:3000/cheshire-cat"
+```
+아래와 같은 response 를 수신한다.
+```
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2018 03:16:21 GMT
+Set-Cookie: ring-session=1e7442c6-d676-437e-973e-6b05eb9c4687;Path=/;HttpOnly
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 42
+Server: Jetty(7.6.13.v20130916)
+
+{"name":"Cheshire Cat","status":"grining"}
+```
