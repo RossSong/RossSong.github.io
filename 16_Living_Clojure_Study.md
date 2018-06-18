@@ -4,7 +4,7 @@
 
 ```
 lein new compojure cheshire-cat
-
+cd cheshire-cat
 lein ring server
 ```
 
