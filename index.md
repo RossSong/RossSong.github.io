@@ -46,7 +46,7 @@
 
 ## Functional Programming
 ### Clojure  
-[Living clojure chapter 7](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
+[Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 ### Haskell
     
 ## Machine Learning/Deep Learning
