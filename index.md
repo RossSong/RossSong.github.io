@@ -45,7 +45,8 @@
 [Legacy code with Unit Test](https://github.com/RossSong/RossSong.github.io/blob/master/15_Legacy_code_with_Unit_Test.md)
 
 ## Functional Programming
-### Clojure
+### Clojure  
+[Liviing clojure chapter 7](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 ### Haskell
     
 ## Machine Learning/Deep Learning
