@@ -76,7 +76,7 @@ project.clj 파일에서 Cheshire 를 제거하고, Ring-JSON 을 추가한다.
 ```
 src/cheshire_cat/handler.clj 에서 ring-json 과 response 에 대한 라이브러리 참조를 추가한다.   
 ```
-[ring.middle.json :as ring-json]
+[ring.middleware.json :as ring-json]
 [ring.util.response :as rr]
 ```
 cheshire-cat 에 대한 response 를 다음과 같이 수정한다.
