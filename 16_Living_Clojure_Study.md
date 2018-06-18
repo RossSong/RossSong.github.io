@@ -82,7 +82,7 @@ src/cheshire_cat/handler.clj 에서 ring-json 과 response 에 대한 라이브�
 cheshire-cat 에 대한 response 를 다음과 같이 수정한다.
 ```
 (GET "/cheshire-cat" []
-    (rr/response {:name "Chesire Cat" :status :grining}))
+    (rr/response {:name "Cheshire Cat" :status :grining}))
 ```   
 
 그리고 def app 을 다음과 같이 수정한다.
