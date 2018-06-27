@@ -51,6 +51,8 @@
 [alogorithm](https://github.com/RossSong/RossSong.github.io/blob/master/19_Clojure_algorithm.md)
 
 ### Haskell
+
+[alogorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
     
 ## Machine Learning/Deep Learning
 ### OCR
