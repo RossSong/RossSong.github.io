@@ -49,6 +49,6 @@
 ### Kaggle
 #### Dogs vs Cats
 
-### Gaussian Process for machine learning
+### Gaussian Process for Machine Learning
 ### PRML(Pattern Recognition & Machien Learning, Bishop)
 
