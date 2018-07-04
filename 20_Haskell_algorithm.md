@@ -26,3 +26,21 @@ main = do
     let ret = quicksort [10,2,5,3,1,6,7,4,2,3,4,8,9]
     print ret
 ```
+
+### binary-tree
+```
+(defrecord Node [el left right])
+
+(defn insert [:{keys [el left right] :as tree} value]
+      (cond
+        (nil? tree) (Node. value nil nil)
+        (> el value) (Node. el (insert left value) right)
+        (< el value) (Node. el left (insert right value))
+        :else tree))
+        
+(def to-tree #(reduce insert nil %))
+(def tree (to-tree '(6 5 8 3))) 
+
+tree
+#user.Node{:el 6, :left #user.Node{:el 5, :left #user.Node{:el 3, :left nil, :right nil}, :right nil}, :right #user.Node{:el 8, :left nil, :right nil}}
+```
