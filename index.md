@@ -27,7 +27,8 @@
 
 ### ReactorKit, ReSwift
 [Hello World - ReactorKit](https://github.com/RossSong/RossSong.github.io/blob/master/13_hello_world_ReactorKit.md)   
-[Hello World - ReSwift](https://github.com/RossSong/RossSong.github.io/blob/master/14_hello_world_ReSwift.md)
+[Hello World - ReSwift](https://github.com/RossSong/RossSong.github.io/blob/master/14_hello_world_ReSwift.md)  
+[Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/22_Swift_algorithm.md)
 
 ### Legacy code 에 Unit Test 적용하기 
 [Legacy code with Unit Test](https://github.com/RossSong/RossSong.github.io/blob/master/15_Legacy_code_with_Unit_Test.md)
@@ -36,11 +37,11 @@
 ### Clojure  
 [Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 
-[alogorithm](https://github.com/RossSong/RossSong.github.io/blob/master/19_Clojure_algorithm.md)
+[Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/19_Clojure_algorithm.md)
 
 ### Haskell
 
-[alogorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
+[Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
 
 ## Machine Learning/Deep Learning/scikit-learn
 [scikit-learn](https://github.com/RossSong/RossSong.github.io/blob/master/21_Scikit-Learn-1.md)
