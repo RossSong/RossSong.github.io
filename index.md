@@ -41,8 +41,10 @@
 ### Haskell
 
 [alogorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
-    
-## Machine Learning/Deep Learning
+
+## Machine Learning/Deep Learning/scikit-learn
+[scikit-learn](https://github.com/RossSong/RossSong.github.io/blob/master/21_Scikit-Learn-1.md)
+
 ### OCR
 ### ChatBot/Q&A machine
 ### CycleGAN
