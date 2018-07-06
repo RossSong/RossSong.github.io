@@ -35,3 +35,21 @@
        
 (quick-sort (numbers 100))
 ```
+
+### binary-tree
+```
+(defrecord Node [el left right])
+
+(defn insert [:{keys [el left right] :as tree} value]
+      (cond
+        (nil? tree) (Node. value nil nil)
+        (> el value) (Node. el (insert left value) right)
+        (< el value) (Node. el left (insert right value))
+        :else tree))
+        
+(def to-tree #(reduce insert nil %))
+(def tree (to-tree '(6 5 8 3))) 
+
+tree
+#user.Node{:el 6, :left #user.Node{:el 5, :left #user.Node{:el 3, :left nil, :right nil}, :right nil}, :right #user.Node{:el 8, :left nil, :right nil}}
+```
