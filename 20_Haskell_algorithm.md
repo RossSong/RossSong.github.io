@@ -26,3 +26,20 @@ main = do
     let ret = quicksort [10,2,5,3,1,6,7,4,2,3,4,8,9]
     print ret
 ```
+
+### BinaryTree
+```
+data BinaryTree a = EmptyTree | Node a (BinaryTree a) (BinaryTree a)
+     deriving (Show)
+
+treeInsert :: Ord a => a -> BinaryTree a -> BinaryTree a
+treeInsert el EmptyTree  = Node el EmptyTree EmptyTree
+treeInsert el (Node a left right)
+       | el == a = Node el left right
+       | el < a = Node a (treeInsert el left) right
+       | el > a = Node a left (treeInsert el right)
+       
+let aaa = treeInsert 1 EmptyTree
+let bbb = treeInsert 2 aaa
+let ccc = treeInsert 3 bbb
+```
