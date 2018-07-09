@@ -33,7 +33,7 @@ data BinaryTree a = EmptyTree | Node a (BinaryTree a) (BinaryTree a)
      deriving (Show)
 
 treeInsert :: Ord a => a -> BinaryTree a -> BinaryTree a
-treeInsert el EmptyTree  = Node el EmptyTree EmptyTree
+treeInsert el EmptyTree = Node el EmptyTree EmptyTree
 treeInsert el (Node a left right)
        | el == a = Node el left right
        | el < a = Node a (treeInsert el left) right
