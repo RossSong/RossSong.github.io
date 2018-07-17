@@ -28,7 +28,7 @@
                  (when pivot
                        (concat (quick-sort (filter #(< % pivot) coll))
                                [pivot]
-                               (quick-sort (filter #(>= % pivot) coll))
+                               (quick-sort (filter #(> % pivot) coll))
                         )
                   )
 )
