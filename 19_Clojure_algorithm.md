@@ -40,7 +40,7 @@
 ```
 (defrecord Node [el left right])
 
-(defn insert [:{keys [el left right] :as tree} value]
+(defn insert [{:keys [el left right] :as tree} value]
       (cond
         (nil? tree) (Node. value nil nil)
         (> el value) (Node. el (insert left value) right)
