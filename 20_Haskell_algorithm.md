@@ -4,7 +4,7 @@ add :: Integer -> Integer -> Integer; add x y = x + y
 let ret = add 1 2  
 print ret
 3
-
+```
 
 ### bubble-sort
 ```
