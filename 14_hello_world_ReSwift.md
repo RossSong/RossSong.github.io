@@ -72,11 +72,11 @@ class ViewController: UIViewController, StoreSubscriber {
     let disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
-        mainStore.subscribe(self)
+        store.subscribe(self)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        mainStore.unsubscribe(self)
+        store.unsubscribe(self)
     }
 ```
 
