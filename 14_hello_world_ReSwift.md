@@ -65,11 +65,19 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 let store = Store(reducer: appReducer, state: AppState(), middleware: [])
 ```
 
-7.ViewController 가 Store 의 State 를 수신할 수 있도록 StoreSubscriber 를 상속
+7.ViewController 가 Store 의 State 를 수신할 수 있도록 StoreSubscriber 를 상속하고 Store 를 Subscribe  
 
 ```
 class ViewController: UIViewController, StoreSubscriber {
     let disposeBag = DisposeBag()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        mainStore.subscribe(self)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        mainStore.unsubscribe(self)
+    }
 ```
 
 
