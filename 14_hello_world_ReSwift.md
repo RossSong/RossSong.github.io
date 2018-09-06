@@ -69,6 +69,7 @@ let store = Store(reducer: appReducer, state: AppState(), middleware: [])
 
 ```
 class ViewController: UIViewController, StoreSubscriber {
+    let disposeBag = DisposeBag()
 ```
 
 
