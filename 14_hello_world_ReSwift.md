@@ -36,6 +36,7 @@ ReSwift.framework
 5.ReSwift 사용을 위한 State, Action, appReducer 정의
 ```
 import RxSwift
+import RxCocoa
 import ReSwfit 
 
 struct AppState: StateType {
