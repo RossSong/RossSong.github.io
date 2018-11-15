@@ -73,3 +73,7 @@ Cardano(ada)
 
 ### Flutter
 ### React
+### TDD
+
+#### python, flask, unit test
+#### jest
