@@ -58,7 +58,18 @@ Use case based Test Driven Development
 ### Gaussian Process for Machine Learning
 ### PRML(Pattern Recognition & Machien Learning, Bishop)
 
+Chapter 6. 커널 방법론
+
+커널이란?(https://www.quora.com/What-is-the-intuitive-explanation-of-a-kernel-in-statistics)
+
+6.2 커널의 구성
+
+커널 대입을 위해서는 유효한 커널함수를 구성할 수 있어야 한다. 특정 공간 함수를 정한 후 이에 해당하는 커널을 찾는 방법. 대안으로 커널을 직접 구성하는 방법.   
+
 ### Block Chain
 BitCoin  
 Ethereum  
 Cardano(ada)  
+
+### Flutter
+### React
