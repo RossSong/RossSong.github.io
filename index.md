@@ -62,9 +62,17 @@ Chapter 6. 커널 방법론
 
 커널이란?(https://www.quora.com/What-is-the-intuitive-explanation-of-a-kernel-in-statistics)
 
+확률 분포는 평균과 분산으로 표현될 수 있는데, 분산값을 나타내는 함수??
+
 6.2 커널의 구성
 
 커널 대입을 위해서는 유효한 커널함수를 구성할 수 있어야 한다. 특정 공간 함수를 정한 후 이에 해당하는 커널을 찾는 방법. 대안으로 커널을 직접 구성하는 방법.   
+
+Chapter 10. 근사 추정
+
+10.3.3 하한 경계
+
+10.4 지수족 분포
 
 ### Block Chain
 BitCoin  
