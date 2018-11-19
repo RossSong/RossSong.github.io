@@ -46,6 +46,10 @@ Use case based Test Driven Development
 
 [Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
 
+#### Yesod
+
+Hello world
+
 ## Machine Learning/Deep Learning/scikit-learn
 [scikit-learn](https://github.com/RossSong/RossSong.github.io/blob/master/21_Scikit-Learn-1.md)
 
@@ -68,6 +72,16 @@ Chapter 6. 커널 방법론
 
 커널 대입을 위해서는 유효한 커널함수를 구성할 수 있어야 한다. 특정 공간 함수를 정한 후 이에 해당하는 커널을 찾는 방법. 대안으로 커널을 직접 구성하는 방법.   
 
+--
+
+Chapter 8. 그래프 모델
+
+8.3 마르코프 무작위장
+
+8.3.1 조건부 독립 성질
+
+--
+
 Chapter 10. 근사 추정
 
 10.3.3 하한 경계
@@ -80,8 +94,51 @@ Ethereum
 Cardano(ada)  
 
 ### Flutter
+
+Redux in Flutter
+
 ### React
+
+Redux
+
 ### TDD
 
+requirements/spec -> test code -> product code
+
+#### TDD in refactoring, woking with legacy code
+
 #### python, flask, unit test
+
+Hello world
+
+test code
+```
+from app import app
+import unittest
+
+class BasicTestCase(unittest.TestCase):
+    def testIndex(self):
+        tester = app.test_client(self)
+        response = tester.get('/', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data, b'Hello, World!')
+
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+product code
+```
+rom flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+     return 'Hello, World!'
+
+if __name__ == '__main__':
+     app.run()
+```
 #### jest
