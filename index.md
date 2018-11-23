@@ -40,8 +40,18 @@ Use case based Test Driven Development
 ### Clojure  
 [Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 
-[Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/19_Clojure_algorithm.md)
-
+[Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/19_Clojure_algorithm.md)   
+#####test code
+```
+(use 'clojure.test)
+(defn add2 [x] (+ x 2))
+(deftest test-adder (is (= 24 (add2 2))))
+(test-adder)
+FAIL in (test-adder) (form-init8814306212613603266.clj:2)
+expected: (= 24 (add2 2))
+  actual: (not (= 24 4))
+nil
+```
 ### Haskell
 
 [Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
