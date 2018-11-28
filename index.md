@@ -56,6 +56,12 @@ nil
 
 [Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/20_Haskell_algorithm.md)
 
+#### command
+```
+stack runghc xxx.hs
+runhaskell xxx.hs
+```
+
 #### Yesod
 
 Hello world
