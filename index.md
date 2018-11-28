@@ -152,3 +152,12 @@ if __name__ == '__main__':
      app.run()
 ```
 #### jest
+
+#### iOS
+#### Swift
+iPhoneX 이상에서 full screen popview 만들때, 아래의 코드를 추가해야 full screen (탈몰(?) status bar 포함.)
+```
+viewController.modalPresentationStyle = .overFullScreen
+self.navigationController?.definesPresentationContext = false
+```
+        
