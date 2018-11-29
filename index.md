@@ -167,4 +167,9 @@ iPhoneX 이상에서 full screen popview 만들때, 아래의 코드를 추가�
 viewController.modalPresentationStyle = .overFullScreen
 self.navigationController?.definesPresentationContext = false
 ```
-        
+#### VIPER
+### Elixir
+```
+mix new hello_exunit
+mix test
+```
