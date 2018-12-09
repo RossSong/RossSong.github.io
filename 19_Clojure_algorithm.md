@@ -1,5 +1,5 @@
 
-### rnadom generate
+### random generate
 ```
 (defn numbers [n] (take n (repeatedly #(rand-int 100))))
 ```
