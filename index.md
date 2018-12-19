@@ -78,6 +78,20 @@ Hello world
 ### Gaussian Process for Machine Learning
 ### PRML(Pattern Recognition & Machien Learning, Bishop)
 
+Chapter 1. Introduction
+```
+1.1 Example: Polynomial Curve Fitting
+sin(2pix) + noise(가우시안 정규분포를 따르는) 를 이용해서 학습 데이터 생성, sin(2pix) 를 찾는다.
+계수 w, 차수 M 을 찾는다.
+w 는 미분하여 기울기로 계산?.
+M 2 이하일 때 Fitting 이 안되고, 9 이상이면 심하게 진동(Over Fiting)한다.
+M 이 9 이상이어도 학습 데이터가 많거나, error function 에 regularization term 을 더하면 보정이 가능하다.
+regularization term 의 ln lambda 가 0 이면 피팅이 거의 안되고, -18 이면 fitting 이 된다(?).
+(ln lambda 가 - 무한대 이면, lambda 는 0 에 해당)
+```
+1.2 확률 이론
+
+
 Chapter 6. 커널 방법론
 
 커널이란?(https://www.quora.com/What-is-the-intuitive-explanation-of-a-kernel-in-statistics)
