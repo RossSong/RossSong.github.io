@@ -135,6 +135,32 @@ Redux
 
 requirements/spec -> test code -> product code
 
+### Test-Driven Development with Python
+chapter 1
+```
+django, web devier 설치
+browser title 이 'django' 인지 확인하는 Test code 작성
+Test failed.
+$ python3 functional_tests.py Traceback (most recent call last):
+      File "functional_tests.py", line 6, in <module>
+        assert 'Django' in browser.title
+    AssertionError
+
+Product code 작성.
+$ django-admin.py startproject superlists
+
+Test passed
+$ python3 manage.py runserver
+Validating models...
+
+0 errors found
+Django version 1.7, using settings 'superlists.settings' 
+Development server is running at http://127.0.0.1:8000/ Quit the server with CONTROL-C.
+
+$ python3 functional_tests.py 
+$
+```
+
 #### TDD in refactoring, woking with legacy code
 
 #### python, flask, unit test
