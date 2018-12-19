@@ -160,6 +160,10 @@ Development server is running at http://127.0.0.1:8000/ Quit the server with CON
 $ python3 functional_tests.py 
 $
 ```
+Chapter 2
+```
+User Story 먼저 작성(BDD?, Use case??, Spec??) -> Test Code -> Product Code
+```
 
 #### TDD in refactoring, woking with legacy code
 
