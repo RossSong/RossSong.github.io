@@ -206,7 +206,7 @@ if __name__ == '__main__':
 #### iOS
 #### Swift
 ##### [Rx 기본요소 Event, Diposable, Observer, Observable 구현해보기](http://minsone.github.io/programming/swift4-implement-own-rx-event-disposable-observer-observable)
-iPhoneX 이상에서 full screen popview 만들때, 아래의 코드를 추가해야 full screen (탈몰(?) status bar 포함.)
+iPhoneX 이상에서 full screen popview 만들때, 아래의 코드를 추가해야 full screen (탈(?) status bar 포함.)
 ```
 viewController.modalPresentationStyle = .overFullScreen
 self.navigationController?.definesPresentationContext = false
