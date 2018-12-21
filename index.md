@@ -216,4 +216,5 @@ self.navigationController?.definesPresentationContext = false
 ```
 mix new hello_exunit
 mix test
+iex -S mix
 ```
