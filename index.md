@@ -212,6 +212,9 @@ viewController.modalPresentationStyle = .overFullScreen
 self.navigationController?.definesPresentationContext = false
 ```
 #### VIPER
+
+MVVM 을 적용하여 사용하다 보니, 좀 더 Rendering 로직과 비지니스 로직을 좀 더 분리해서 관리하면 좋을 것 같다는 생각을 가지게 되고, ViewController 간에 전환 로직도 따로 분리하면 좋을 것 같다는 생각을 하게 되는데, 그런 생각에 적합한 구조가 VIPER 가 아닌가 싶다. Rendering 로직은 Presenter 로, ViewConteroll 간에 전환은 Router 로, 비지니스 로직은 Interactor 로 분리하면 좋을 것 같다는 생각이 든다. (View와 Model(Entity)은 MVVM이나 VIPER도 같은 것이고..)   
+
 ### Elixir
 ```
 mix new hello_exunit
