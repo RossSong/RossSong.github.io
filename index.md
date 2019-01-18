@@ -221,3 +221,11 @@ mix new hello_exunit
 mix test
 iex -S mix
 ```
+
+### hash table? hash code?
+hashtable 은 Store/Retrieve 가 O(1)
+hashtable 의 index 를 만드는 hashcode 는 입력 string 의 길이 m 에 대해 O(m)
+hashtable insert 의 시간 복잡도는 hashtable 크기 n 이 m 에 비해서 아주 크다고 할때 m/n 은 아주 작아서 O(1) 로 볼 수 있을까? 
+아니면 한번 계산하면 계속 값을 유지 하고 있어서 한번만 계산하면 되니 O(1)로 볼 수 있는 것일까?
+그냥 보면 O(m) m 은 n 보다 아주 작다?
+어찌 되었든 검색할 때 n 을 다 조회해볼 필요는 없으니 장점. 확실히 검색에서는 O(1) 이니..
