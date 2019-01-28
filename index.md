@@ -229,3 +229,115 @@ hashtable insert 의 시간 복잡도는 hashtable 크기 n 이 m 에 비해서 
 아니면 한번 계산하면 계속 값을 유지 하고 있어서 한번만 계산하면 되니 O(1)로 볼 수 있는 것일까?
 그냥 보면 O(m) m 은 n 보다 아주 작다?
 어찌 되었든 검색할 때 n 을 다 조회해볼 필요는 없으니 장점. 확실히 검색에서는 O(1) 이니..
+
+## PDF 문서 포맷 분석
+PDF 내에 특정 문자열(전화번호, 이메일 등)을 치환하는 것에 대한 리서치
+1.PDF 에서 Text 영역을 분리
+```
+PDF 파일에서 Text 영역은 아래의 형식으로 저장됨.
+BT
+/F1 12 Ft
+(...)Tj
+ET
+Tj 앞에 있는 부분들이 Text 내용임.
+Ft 앞에 있는 내용들이 Text 가 Encoding 된 Font 에 대한 내용임. F1 폰트를 쓰고, 폰트 사이즈를 12로 함.
+Tj 앞에 있는 부분들은 Plain Text 일 수도 있고, Encoding 된 Text 일 수도 있다.
+Encoding 된 경우 Tj 에는 해당 Text 의 encoding index가 나타난다. (예 - <01>2<0203>2..)
+<> 안에 내용이 index 이고 <> 다음에 오는 것이 glyph 라고하는 것의 위치를 지정하는 값인 것 같다. (대충 글자 간격 같은 것인가 보다..)
+해당 폰트 리소스에서 해당 글자를 읽어 와야 한다.
+해당 폰트 리소스는 PDF 문서내에 다른 object 에 정의되어 있는데 정의 되어 있는 방식이 pdf 버전별로 조금씩 다른 것 같다.
+pdf 1.3 에서
+
+44 0 obj
+<<
+/F1 45 0 R 
+/F2 46 0 R 
+/F3 47 0 R
+>>
+endobj
+
+이런식으로 정의되어 있고,
+F1 폰트가 45 0 object 에 리소스로 정의 되어 있다고 되어 있고,
+
+45 0 obj
+<</BaseFont /BAAAAA+Lato-Light /FirstChar 0 /FontDescriptor 56 0 R
+  /LastChar 44 /Subtype /TrueType /ToUnicode 57 0 R /Type /Font /Widths
+  [512 579 550 222 425 271 578 760 564 258 510 521 550 353 484 342 551
+  340 558 805 506 551 791 842 471 580 233 580 580 580 258 469 755 476
+  535 755 655 764 676 607 549 582 240 623 221]>>
+endobj
+
+45 object 는 위와 같이 정의 되어 있는데 ToUnicode 항목에 57 0 object 에 리소스로 정의 되어 있다고 표기 되어 있다.
+
+57 0 obj
+<</Length 858>>
+stream
+/CIDInit/ProcSet findresource begin
+12 dict begin
+begincmap
+/CIDSystemInfo<<
+/Registry (Adobe)
+/Ordering (UCS)
+/Supplement 0
+>> def
+/CMapName/Adobe-Identity-UCS def
+/CMapType 2 def
+1 begincodespacerange
+<00> <FF>
+endcodespacerange
+44 beginbfchar
+<01> <0054>
+<02> <0068>
+<03> <0069>
+<04> <0073>
+<05> <0020>
+<06> <0050>
+<07> <0044>
+<08> <0046>
+<09> <0028>
+<0A> <0067>
+<0B> <0065>
+<0C> <006E>
+<0D> <0072>
+<0E> <0061>
+<0F> <0074>
+<10> <0064>
+<11> <0066>
+<12> <006F>
+<13> <006D>
+<14> <004C>
+<15> <0062>
+<16> <004F>
+<17> <006600660069>
+<18> <0063>
+<19> <0035>
+<1A> <002E>
+<1B> <0031>
+<1C> <0034>
+<1D> <0032>
+<1E> <0029>
+<1F> <0078>
+<20> <0048>
+<21> <006B>
+<22> <0053>
+<23> <004E>
+<24> <0041>
+<25> <0077>
+<26> <0043>
+<27> <0052>
+<28> <0075>
+<29> <00740069>
+<2A> <003A>
+<2B> <0058>
+<2C> <006C>
+endbfchar
+endcmap
+CMapName currentdict /CMap defineresource pop
+end
+end
+
+57 object 에는 index 와 매핍되는 unicode 글자 테이블이 정의 되어 있다.
+
+```
+2.Text 영역내에 특정문자열(전화번호, 이메일 등) 치환
+3.PDF 로 다시 저장
