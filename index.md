@@ -338,6 +338,32 @@ end
 
 57 object 에는 index 와 매핍되는 unicode 글자 테이블이 정의 되어 있다.
 
+----
+PDF 1.4 에서는
+
+폰트 리소스 정의가 ProcSet /Font 으로 되어 있다.
+
+<< /ProcSet [/PDF /ImageB] 
+/Font 
+<< 
+/F5 6 0 R
+/F6 8 0 R
+/F7 10 0 R
+/F8 12 0 R
+>>
+/XObject << /Im1 130R
+>>
+----
+PDF 1.7 에서는 /Resources /Font 에 정의 되어 있다.
+
+/Resources
+<< /Font << 
+/F13 23 0 R
+23 0 obj
+<< /Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica >>
+endobj
 ```
 2.Text 영역내에 특정문자열(전화번호, 이메일 등) 치환
 3.PDF 로 다시 저장
