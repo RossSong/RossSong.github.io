@@ -30,13 +30,7 @@
 [Hello World - ReSwift](https://github.com/RossSong/RossSong.github.io/blob/master/14_hello_world_ReSwift.md)  
 [Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/22_Swift_algorithm.md)
 
-### Legacy code 에 Unit Test 적용하기 
-[Legacy code with Unit Test](https://github.com/RossSong/RossSong.github.io/blob/master/15_Legacy_code_with_Unit_Test.md)
-
-### TDD in iOS
-Use case based Test Driven Development
-
-## Functional Programming
+## Functional Programming, Algorithm
 ### Clojure  
 [Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 
@@ -66,6 +60,22 @@ runhaskell xxx.hs
 
 Hello world
 
+### Elixir
+```
+mix new hello_exunit
+mix test
+iex -S mix
+```
+### Algorithm
+#### hash table? hash code?
+hashtable 은 Store/Retrieve 가 O(1)
+hashtable 의 index 를 만드는 hashcode 는 입력 string 의 길이 m 에 대해 O(m)
+hashtable insert 의 시간 복잡도는 hashtable 크기 n 이 m 에 비해서 아주 크다고 할때 m/n 은 아주 작아서 O(1) 로 볼 수 있을까? 
+아니면 한번 계산하면 계속 값을 유지 하고 있어서 한번만 계산하면 되니 O(1)로 볼 수 있는 것일까?
+그냥 보면 O(m) m 은 n 보다 아주 작다?
+어찌 되었든 검색할 때 n 을 다 조회해볼 필요는 없으니 장점. 확실히 검색에서는 O(1) 이니..
+
+# ML
 ## Machine Learning/Deep Learning/scikit-learn
 [scikit-learn](https://github.com/RossSong/RossSong.github.io/blob/master/21_Scikit-Learn-1.md)
 
@@ -123,11 +133,12 @@ Chapter 10. 근사 추정
 
 10.4 지수족 분포
 
-### Block Chain
+# Block Chain
 BitCoin  
 Ethereum  
 Cardano(ada)  
 
+# Cross-platform
 ### Flutter
 
 Redux in Flutter
@@ -136,6 +147,7 @@ Redux in Flutter
 
 Redux
 
+# Clean Code/TDD
 ### Clean Code
 Robert C. Martin   
 
@@ -175,6 +187,12 @@ So, another way to know that a function is doing more than “one thing” is if
 ### TDD
 
 requirements/spec -> test code -> product code
+
+### Legacy code 에 Unit Test 적용하기 
+[Legacy code with Unit Test](https://github.com/RossSong/RossSong.github.io/blob/master/15_Legacy_code_with_Unit_Test.md)
+
+### TDD in iOS
+Use case based Test Driven Development
 
 ### Test-Driven Development with Python
 chapter 1
@@ -244,7 +262,8 @@ if __name__ == '__main__':
 ```
 #### jest
 
-#### iOS
+# Mobile
+### iOS
 #### Swift
 ##### [Rx 기본요소 Event, Diposable, Observer, Observable 구현해보기](http://minsone.github.io/programming/swift4-implement-own-rx-event-disposable-observer-observable)
 iPhoneX 이상에서 full screen popview 만들때, 아래의 코드를 추가해야 full screen (탈(?) status bar 포함.)
@@ -256,21 +275,7 @@ self.navigationController?.definesPresentationContext = false
 
 MVVM 을 적용하여 사용하다 보니, 좀 더 Rendering 로직과 비지니스 로직을 좀 더 분리해서 관리하면 좋을 것 같다는 생각을 가지게 되고, ViewController 간에 전환 로직도 따로 분리하면 좋을 것 같다는 생각을 하게 되는데, 그런 생각에 적합한 구조가 VIPER 가 아닌가 싶다. Rendering 로직은 Presenter 로, ViewConteroll 간에 전환은 Router 로, 비지니스 로직은 Interactor 로 분리하면 좋을 것 같다는 생각이 든다. (View와 Model(Entity)은 MVVM이나 VIPER도 같은 것이고..)   
 
-### Elixir
-```
-mix new hello_exunit
-mix test
-iex -S mix
-```
-
-### hash table? hash code?
-hashtable 은 Store/Retrieve 가 O(1)
-hashtable 의 index 를 만드는 hashcode 는 입력 string 의 길이 m 에 대해 O(m)
-hashtable insert 의 시간 복잡도는 hashtable 크기 n 이 m 에 비해서 아주 크다고 할때 m/n 은 아주 작아서 O(1) 로 볼 수 있을까? 
-아니면 한번 계산하면 계속 값을 유지 하고 있어서 한번만 계산하면 되니 O(1)로 볼 수 있는 것일까?
-그냥 보면 O(m) m 은 n 보다 아주 작다?
-어찌 되었든 검색할 때 n 을 다 조회해볼 필요는 없으니 장점. 확실히 검색에서는 O(1) 이니..
-
+# ETC
 ## PDF 문서 포맷 분석
 PDF 내에 특정 문자열(전화번호, 이메일 등)을 치환하는 것에 대한 리서치
 1.PDF 에서 Text 영역을 분리
@@ -406,5 +411,5 @@ PDF 1.7 에서는 /Resources /Font 에 정의 되어 있다.
 /BaseFont /Helvetica >>
 endobj
 ```
-2.Text 영역내에 특정문자열(전화번호, 이메일 등) 치환
+2.Text 영역내에 특정문자열(전화번호, 이메일 등) 치환  
 3.PDF 로 다시 저장
