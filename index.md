@@ -136,6 +136,42 @@ Redux in Flutter
 
 Redux
 
+### Clean Code
+Robert C. Martin   
+
+#### Chapter 1: Clean Code
+##### The Boy Scout Rule
+```
+Leave the campground cleaner than you found it.
+```
+#### Chapter 2: Meaningful Names
+##### Use Intention-Revealing Names
+##### Avoid Disinformation
+##### Make Meaningful Distinctions
+##### Use Pronounceable Names
+#### Chapter 3: Meaningful Names
+##### Small!!
+```
+Every function in this program was just two, or three, or four lines long.
+Each was transparently obvious. 
+Each told a story. 
+And each led you to the next in a compelling order. 
+That’s how short your functions should be!
+```
+###### Blocks and Indenting
+```
+This implies that the blocks within if statements, else statements, while statements, and so on should be one line long. Probably that line should be a function call. Not only does this keep the enclosing function small, but it also adds documentary value because the function called within the block can have a nicely descriptive name.
+This also implies that functions should not be large enough to hold nested structures. Therefore, the indent level of a function should not be greater than one or two. This, of course, makes the functions easier to read and understand.
+```
+##### Do One Thing
+```
+So, another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its imple- mentation [G34].
+```
+##### One Level of Abstraction per Function
+##### Reading Code from Top to Bottom: The Stepdown Rule
+##### Have No Side Effects
+##### Don't Repeat Yourself
+
 ### TDD
 
 requirements/spec -> test code -> product code
