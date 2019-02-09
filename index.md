@@ -204,6 +204,11 @@ So, another way to know that a function is doing more than “one thing” is if
 ##### Don't Repeat Yourself
 
 ### TDD
+```
+TDD 에서 가장 중요한 것은 아무래도 요구사항(requirements/spec)을 코드가 아닌 글로 명확히 작성하는 것같다.
+모든 것의 시작이 되는 부분이다.
+요구사항을 기술은 문장이 있어야 Product code 를 작성하기 이전에 Test code 를 명확하게 작성할 수 있다.
+```   
 
 requirements/spec -> test code -> product code
 
