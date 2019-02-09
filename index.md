@@ -77,22 +77,22 @@ hashtable insert 의 시간 복잡도는 hashtable 크기 n 이 m 에 비해서 
 그냥 보면 O(m) m 은 n 보다 아주 작다?
 어찌 되었든 검색할 때 n 을 다 조회해볼 필요는 없으니 장점. 확실히 검색에서는 O(1) 이니..
 
-### tree
+### Tree
 
-### heap
+### Heap
 ```
 min/max heap
 heapify
 ```
 
-### sort
+### Sort
 ```
 bubble sort
 quick sort
 merge sort
 ```
 
-### graph
+### Graph
 
 # ML
 ## Machine Learning/Deep Learning/scikit-learn
