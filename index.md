@@ -33,6 +33,8 @@
 ### Clojure  
 [Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 
+[Destructuring in Clojure](https://clojure.org/guides/destructuring)
+
 [Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/19_Clojure_algorithm.md)   
 ##### test code
 ```
