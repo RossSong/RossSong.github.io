@@ -30,6 +30,22 @@
 [Hello World - ReSwift](https://github.com/RossSong/RossSong.github.io/blob/master/14_hello_world_ReSwift.md)  
 
 ## Functional Programming, Algorithm
+
+### Functor, Applicative, Monad
+```
+functors: you apply a function to a wrapped value using fmap or <$>
+something that can be mapped over.
+typeclass that has a definition for fmap.
+
+applicatives: you apply a wrapped function to a wrapped value using <*> or liftA
+typeclass that has a definition for <*>.
+
+monads: you apply a function that returns a wrapped value, to a wrapped value using >>= or liftM
+typeclass that has definitions for return, bind
+"return" operator return a monad.
+"bind" operator return a monad as a result that come from a function applied to Monad(wrapped value)
+```
+
 ### Clojure  
 [Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
 
