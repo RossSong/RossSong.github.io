@@ -45,6 +45,8 @@ typeclass that has definitions for return, bind
 "return" operator return a monad.
 "bind" operator return a monad as a result that come from a function applied to Monad(wrapped value)
 ```
+[Kotlin Functors, Applicatives, And Monads in Pictures](https://hackernoon.com/kotlin-functors-applicatives-and-monads-in-pictures-part-3-3-832d58d92445)  
+[Swift Functors, Applicatives, and Monads in Pictures](https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/)
 
 ### Clojure  
 [Living clojure - Chapter 7. Creating Web Applications With Clojure](https://github.com/RossSong/RossSong.github.io/blob/master/16_Living_Clojure_Study.md)
