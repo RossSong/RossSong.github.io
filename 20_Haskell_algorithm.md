@@ -21,6 +21,15 @@ print ret
 
 ### bubble-sort
 ```
+doit []  = []
+doit [x] = [x]
+doit (x:xs) | x > head xs = head xs:doit (x:tail xs)
+             | otherwise = x:doit xs
+bubbleSort xs = foldl (\acc e -> doit acc) xs xs
+bubbleSort [5, 3, 4, 6, 1, 2]
+```
+
+```
 bubbleSort :: (Ord a) => [a] -> [a]
 bubbleSort [] = []
 bubbleSort [x] = [x]
