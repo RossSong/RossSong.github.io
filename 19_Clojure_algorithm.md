@@ -1,4 +1,11 @@
-
+### loops
+```
+user=> (loop [x 10]
+  #_=>       (when (> x 1)
+  #_=>             (println "hello world!")
+  #_=>             (recur (dec x)))
+  #_=> )
+```
 ### random generate
 ```
 (defn numbers [n] (take n (repeatedly #(rand-int 100))))
