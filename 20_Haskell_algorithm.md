@@ -1,3 +1,16 @@
+### loops
+```
+Prelude> :{
+Prelude| repeatNTimes 0 _ = return ()
+Prelude| repeatNTimes n action =
+Prelude|   do
+Prelude|     action
+Prelude|     repeatNTimes (n-1) action
+Prelude| :}
+
+repeatNTimes 10 (putStrLn "hello word")
+```
+
 ### add
 ```
 add :: Integer -> Integer -> Integer; add x y = x + y  
