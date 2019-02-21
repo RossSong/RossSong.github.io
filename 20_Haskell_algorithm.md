@@ -18,6 +18,10 @@ let ret = add 1 2
 print ret
 3
 ```
+```
+ (\x y -> x + y ) 3 5
+ 8
+```
 
 ### bubble-sort
 ```
