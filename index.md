@@ -86,7 +86,7 @@ mix test
 iex -S mix
 ```
 
-[algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/Elixir_algorithm.md)  
+[Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/Elixir_algorithm.md)  
 
 ### Swift
 [Algorithm](https://github.com/RossSong/RossSong.github.io/blob/master/22_Swift_algorithm.md)
