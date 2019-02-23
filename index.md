@@ -121,6 +121,9 @@ merge sort
 ## Machine Learning/Deep Learning/scikit-learn
 [scikit-learn](https://github.com/RossSong/RossSong.github.io/blob/master/21_Scikit-Learn-1.md)
 
+### trends(?)
+Scaled Dot-Product Attention, Multi-Head Attention, Transformer
+
 ### OCR
 ### ChatBot/Q&A machine
 ### CycleGAN
@@ -225,6 +228,41 @@ So, another way to know that a function is doing more than “one thing” is if
 ##### Reading Code from Top to Bottom: The Stepdown Rule
 ##### Have No Side Effects
 ##### Don't Repeat Yourself
+
+#### Chapter 4: Comments
+##### Comments Do Not Make Up for Bad Code
+##### Explain Yourself in Code
+##### Good Comments
+```
+Legal Comments
+Informative Commnets
+Explanation of Intent
+Clarification
+Warning of Consequences
+TODO Comments
+Amplification
+Javadocs in Public APIs
+```
+##### Bad Comments
+```
+Mumbling
+Redundant Comments
+Misleading Comments
+Mandated Comments
+Journal Comments
+Noise Comments
+Don’t Use a Comment When You Can Use a Function or a Variable
+Position Markers
+Closing Brace Comments
+Attributions and Bylines
+Commented-Out Code
+HTML Comments
+Nonlocal Information - " Don’t offer systemwide information in the context of a local comment. "
+Too Much Information
+Inobvious Connection - " The purpose of a comment is to explain code that does not explain itself. It is a pity when a comment needs its own explanation."
+Function Headers - "Short functions don’t need much description. A well-chosen name for a small function that does one thing is usually better than a comment header. "
+Javadocs in Nonpublic Code
+```
 
 ### TDD
 ```
