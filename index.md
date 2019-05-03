@@ -178,6 +178,29 @@ Chapter 10. 근사 추정
 
 10.4 지수족 분포
 
+# 확률, 베이지안 이론 ..
+### MLE (Maximum likelihood estimation)
+argmax f(X|theta) -> theta 가 주어질 때, 그 theta 에 대한 X 의 확률을 최대화 하는 것. 주어진 데이터 X 에 대해서 최대 확률을 가지는 theta 를 찾는다.
+observation에 따라 그 값이 너무 민감하게 변한다는 단점
+
+### MAP (Maximum a Posteriori Estimation)
+MLE 의 단점을 해결하기 위해서, (MLE 와는 반대로) X 가 주어질 때, 주어진 X 에 대해 최대 화률을 가지는 theta 를 찾는다.
+argmax f(theta|X) -> theta
+
+MAP 를 계산하기 위해서는 f(theta|X) 를 알아야 하는데, f(X|theta) 만 알고 있기 때문에, Bayes' Theorem 을 이용해서 푼다.
+P(Y|X) = P(X|Y) P(Y) / P(X) 
+
+argmax f(theta| X) = argmax f(X|theta) f(theta)/f(X)
+f(X)는 theta 에 영향을 받는 term 이 아니기 때문에
+argmax f(X|theta) f(theta) 
+
+여기서 f(theta) 가 우리가 세운 가설임. 좋은 가설을 세울 수록 더 정확한 추론이 가능하다. f(X|theta)는 MLE 에서 사용한 .
+관측한 데이터 X 만 사용하는 것보다 더 우수한 parameter estimation 이 가능하다.
+
+f(theta) - 가설을 알고 있다면, MLE가 아니라 MAP 를 사용 가능함. 가설을 통해서 더 좋은 결과를 만들 수 있음. (가설이 잘못되면 결과가 나빠짐.)
+[참고](http://sanghyukchun.github.io/58/)
+### EM
+
 # Block Chain
 BitCoin  
 Ethereum  
