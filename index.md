@@ -33,9 +33,9 @@
 
 ### Functor, Applicative, Monad
 ```
-functors: you apply a function to a wrapped value using fmap or <$>
+functors: you apply a function to a wrapped value using map or <$>
 something that can be mapped over.
-typeclass that has a definition for fmap.
+typeclass that has a definition for map.
 
 applicatives: you apply a wrapped function to a wrapped value using <*> or liftA
 typeclass that has a definition for <*>.
@@ -44,6 +44,95 @@ monads: you apply a function that returns a wrapped value, to a wrapped value us
 typeclass that has definitions for return, bind
 "return" operator return a monad.
 "bind" operator return a monad as a result that come from a function applied to Monad(wrapped value)
+```
+```
+functor: a type that implements map.
+applicative: a type that implements apply. (applicative functor extends the functor interface with pure and apply.)
+
+monad: a type that implements flatMap.
+
+The Monad class defines two basic operators: >>= (bind) and return.
+In general, a monad is just an applicative functor you define join for.
+Bind is just a convenience function that composes join, apply, and pure.
+Or if you prefer, bind composes join and map together.
+bind(effect)(function) = join(apply(pure(function))(effect)) or
+bind(effect)(function) = join(map(function)(effect))
+
+Monad is a applicative type class with a new function flatten.
+flatMap is often considered to be the core function of Monad.
+
+Monads apply a function that returns a wrapped value to a wrapped value. Monads have a function | (>>= in Haskell) (pronounced “bind”) to do this.
+
+Monads have a function flatMap (liftM in Haskell) to do this. And we can define an infix operator >>- (>>= in Haskell) for it.
+```
+```
+*wrapped 라는 것은 리스트 혹은 Just(?) 같은 것(Context)에 들어가 있는 것을 의미.
+--
+Functor -> mappable type -> "mappable" 은 wrapped value 에 function 을 적용하는 것.
+
+예> 
+Prelude> (+3) (Just 2)
+ ERR - No instance for (Num (Maybe a0))
+wrapped value (Just 2) 에 함수 (+3)를 그냥 적용할 수 없음. 오류 발생함.
+
+> fmap (+3) (Just 2)
+Just 5
+
+fmap/map 을 이용해서 wrapped value 에 function (+3) 을 적용함.
+ 
+--
+Applicative -> wrapped function 을 wrapped value 에 적용할 수 있는 type
+예>
+> [(*2), (+3)] <*> [1, 2, 3]
+[2, 4, 6, 4, 5, 6]
+
+[(*2), (+3)] -> 함수 (*2) 과 (+3) 이 리스트에 들어가 있음.
+---
+Monad -> wrapped value 에 function 을 적용해서 다시 wrapped value 로 return 하는 type
+
+예)
+>[1, 2, 3, 4] >>= (\x -> return (x + 1))
+[2, 3, 4, 5]
+>(Just 1) >>= (\x -> return (x + 1))
+(Just 2)
+>Nothing >>= (\x -> return (x + 1))
+Nothing
+--
+applicative 이지만, monad 가 아닌 것은 어떤 것이 있을까?
+
+newtype T a = T {multidimensional array of a}
+mkarray [(+10), (+100), id] <*> mkarray [1, 2]
+  == mkarray [[11, 101, 1], [12, 102, 2]]
+  
+입력은 1 차원 배열이고, 여러 함수를 apply 하는데, 결과가 2차원 배열로 나오는 경우,
+applicative 이지만, monad 는 아니다.
+--
+
+functional language 에서 functor , mappable 한 type 이 필요한 이유는?
+절차형 언어에서 처럼 loop 을 돌때, 변수를 지정하고, 값을 변화 시켜 가면서 돌릴 수 없기 때문에, (side effect)
+그런 역할을 할 수 있는 개념이 필요하다고 생각된다. 뭔가 context 상에 원소를 순회하면서 동작할 수 있는 방법이 필요하다.
+그래서 functor 를 정의한 것이 아닐까?
+
+여러 함수를 functor 에 apply 할 수 있는 방법이 필요한 경우가 있었던 것 같고, 
+그래서 applicative 를 도입한 것 같다. 
+이런 것이 가능하면 여러 함수를 적용할 경우 코드가 더 단순해질 수 있다.
+
+그리고 monad 는 functor 로 context 상에 원소를 순회하면서 함수를 적용해서 처리할때,
+그 결과가 입력과 다른 형태로 변형되지 않고 일관된 형태로 유지되었으면 하는 경우가 있었을 것 같다. 
+map 이나 apply 로 함수를 적용해도 출력의 형태가 입력의 형태와 다른지 않다면, 결과를 다루기가 편해질 것 같다.
+어떤 형태의 결과가 나올지 쉽게 예상되기 때문에 연속된 형태로 그 다음 처리를 하기가 용이해진다. 
+함수의 합성으로 복잡한 처리를 한다고 할때, 형태가 계속 일관되게 유지 되기 때문에, 생각하기가 쉬워진다.
+
+Maybe(Optional, nullable??)도 같은 측면에서 유용하다.
+functor 로 뭔가 연속된 처리를 한다고 할때, 연산 중간에 Null 이 발생한다거나 할때, 예외 처리를 하려고 한다면,
+코드가 복잡해지고 지져분해기 쉬운데, Null 이 발생할 수 있는 값을 context 롤 감싸 놓으면,
+Null 인 값이 있든 없든, 동일한 형태로 해당 데이터들을 처리할 수 있게 되고, 코드가 간결해진다.
+코드 중간에 Null 에 대한 예외 처리등을 하지 않으면서 간결하고 일관되게 여러 함수를 이용해서 데이터를 처리할 수 있게된다.
+
+loop 같은 것을 처리할때 side effect 를 없앨 수 있는 mappable 한 특성이 연관이 되어 
+applicative, monad, maybe 등으로 확장되어 간다. 
+side effect 를 없애면서 코드를 단순하고 일관되게 유지 하려면, 이런 개념들이 필요할 수 밖에 없다.
+
 ```
 [Kotlin Functors, Applicatives, And Monads in Pictures](https://hackernoon.com/kotlin-functors-applicatives-and-monads-in-pictures-part-3-3-832d58d92445)  
 [Swift Functors, Applicatives, and Monads in Pictures](https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/)
