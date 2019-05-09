@@ -290,6 +290,38 @@ f(theta) - 가설을 알고 있다면, MLE가 아니라 MAP 를 사용 가능함
 [참고](http://sanghyukchun.github.io/58/)
 ### EM
 
+관측값 X 가 주어질 때, X가 아닌 X가 내포하고 있는 잠재 변수 Z 에 대한 모델링을 할 때 유용한 기법
+
+X 에 대한 가능도를 최대화 한다고 할때
+
+max p(X|theta) = sigma-z p(X, Z| theta)
+
+계산을 단순화 하기 위해서 log likelihood 로 계산,
+잠재변수 Z 에 대한 확률 분포, q(Z) 를 도입하고,
+식을 유도하여(베이지안 룰을 이용) decompsition 하면
+
+ln P(X| theta) = L(q,theta) + KL(q|p)
+
+L(q, theta) = sigma-z q(Z) ln p(X, Z| theta) / q(Z)
+KL(q|p) = - sigma-z q(Z) ln p(Z|X, theta) / q(Z)
+
+random variable X, Z의 joint distribution(p(X, Z| theta)), conditional distribution(p(Z|X, theta))
+
+이 식으로 부터 lower bound 가 최대화되는 theta 와 q(Z) 를 찾고, 그에 해당하는 log likelihood 의 값을 찾는 것이 가능.
+theta 와 q(Z) 를 동시에 최적화 하는 것은 어려운 문제라서 한쪽을 고정하고 나머지를 update 한 다음, 다시 나머지를 같은 방식으로 update 한다.
+수렴할 때까지 반복 (E-step, M-step)
+
+theta 를 고정하고, L(q, theta)를 최대화하는 q(Z) 를 찾는다. -> ln p(X|theta)가 q(Z) 와 상관이 없기 때문에, KL Divergence 가 0 이 되는 값을 찾는다. q(Z) = p(Z|X, theta) 인 경우 0 이 되므로, q(Z) 에 p(Z|X, theta)를 대입하면 해결. E-step 은 언제나 KL Divergence 를 0 으로 만들고,
+lower bound 와 likelihood 를 일치시키는 과정이 됨.
+
+M-step 에서는 반대로, q(Z) 를 고정하고 log likelihood 를 최대화하는 새로운 theta 를 찾는다.
+theta 가 log-likelihoood 에 직접 영향을 미치기 때문에, log-likelihood가 증가하게 된다. 그리고 theta 가 변하였기 때문에, 더 이상 KL Divergence 가 0 이 아니다.
+
+다시 E-step 으로 KL Divergence 를 0 으로 만들고, 다시 M-Step 으로 log-likelihood 값을 키운다.
+계속 반복
+더 이상 값이 변화하지 않을 때까지 반복, log-likelihood 가 수렴하게 됨.
+수렴한 값이 log-likelihood 의 optimum 이 됨.
+
 # Block Chain
 BitCoin  
 Ethereum  
