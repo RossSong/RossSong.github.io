@@ -220,6 +220,11 @@ Scaled Dot-Product Attention, Multi-Head Attention, Transformer
 #### Dogs vs Cats
 
 ### Gaussian Process for Machine Learning
+#### Random Process
+시간별로 표시된(?) 확률 변수의 집합, 시간에 따라 확률이 변함.
+시간에 대한 확률 함수
+#### Gaussian Process
+Random Process 의 한 형태로, 확률 변수가 가우시안을 따름(?).
 ### PRML(Pattern Recognition & Machien Learning, Bishop)
 
 Chapter 1. Introduction
