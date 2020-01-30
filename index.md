@@ -70,6 +70,8 @@ Monads have a function flatMap (liftM in Haskell) to do this. And we can define 
 --
 Functor -> mappable type -> "mappable" 은 wrapped value 에 function 을 적용하는 것.
 
+We can think of a functor as a type of container where we are permitted to apply a single function to every object in the container.
+
 예> 
 Prelude> (+3) (Just 2)
  ERR - No instance for (Num (Maybe a0))
@@ -109,17 +111,24 @@ applicative 이지만, monad 는 아니다.
 --
 
 functional language 에서 functor , mappable 한 type 이 필요한 이유는?
-절차형 언어에서 처럼 loop 을 돌때, 변수를 지정하고, 값을 변화 시켜 가면서 돌릴 수 없기 때문에, (side effect)
-그런 역할을 할 수 있는 개념이 필요하다고 생각된다. 뭔가 context 상에 원소를 순회하면서 동작할 수 있는 방법이 필요하다.
-그래서 functor 를 정의한 것이 아닐까?
+함수형 언어는 복잡한 알고리즘을 함수의 합성으로 표현하는데, 
+함수의 합성으로 현실세계(?)의 복잡한 로직을 처리하는 경우, 
+내부에서는 결국 부수 작용(side-effect)가 발생하기 때문에, 
+함수가 깨지는(?) 경우(오류, Null?, 비동기?, 상태 변경 등등)가 발생하기 한다.
+함수의 합성으로 온전히 로직을 잘 처리하기 위해서는 함수들이 순수함수(부수 효과가 없는 함수)이여야 하는데,
+현실에서는 아닌 경우가 더 많다.
+그래서 (부수 효과가 있는)함수를 Wrapping 해서 순수함수처럼 다룰 수 있는 방법이 필요한데,
+그 방법이 Functor 이다.
 
-여러 함수를 functor 에 apply 할 수 있는 방법이 필요한 경우가 있었던 것 같고, 
+여러 함수를(함수 배열? 같은 것?) functor 에 apply 할 수 있는 방법이 필요한 경우가 있었던 것 같고, 
 그래서 applicative 를 도입한 것 같다. 
+(applicative 는 Functor 에서 apply 할 함수들이 Wrapping 된 경우 처리가 할 수 있는 구조이다.)
 이런 것이 가능하면 여러 함수를 적용할 경우 코드가 더 단순해질 수 있다.
 
-그리고 monad 는 functor 로 context 상에 원소를 순회하면서 함수를 적용해서 처리할때,
-그 결과가 입력과 다른 형태로 변형되지 않고 일관된 형태로 유지되었으면 하는 경우가 있었을 것 같다. 
-map 이나 apply 로 함수를 적용해도 출력의 형태가 입력의 형태와 다른지 않다면, 결과를 다루기가 편해질 것 같다.
+그리고 monad 는 functor 로 context 상에 원소들에 대해서 함수를 적용(사상? map)해서 처리할때,
+그 결과가 입력과 다른 형태로 변형되지 않고 일관된 형태로 유지되었으면 하는 경우를 처리할 수 있는 구조인 것 같다.
+
+map 이나 apply 로 함수를 적용해도 출력의 형태가 입력의 형태와 다르지 않다면, 결과를 다루기가 편해질 것 같다.
 어떤 형태의 결과가 나올지 쉽게 예상되기 때문에 연속된 형태로 그 다음 처리를 하기가 용이해진다. 
 함수의 합성으로 복잡한 처리를 한다고 할때, 형태가 계속 일관되게 유지 되기 때문에, 생각하기가 쉬워진다.
 
@@ -129,10 +138,10 @@ functor 로 뭔가 연속된 처리를 한다고 할때, 연산 중간에 Null �
 Null 인 값이 있든 없든, 동일한 형태로 해당 데이터들을 처리할 수 있게 되고, 코드가 간결해진다.
 코드 중간에 Null 에 대한 예외 처리등을 하지 않으면서 간결하고 일관되게 여러 함수를 이용해서 데이터를 처리할 수 있게된다.
 
-loop 같은 것을 처리할때 side effect 를 없앨 수 있는 mappable 한 특성이 연관이 되어 
-applicative, monad, maybe 등으로 확장되어 간다. 
-side effect 를 없애면서 코드를 단순하고 일관되게 유지 하려면, 이런 개념들이 필요할 수 밖에 없다.
-
+함수형 언어는 함수의 합성을 통해서 현실세계(?)의 복잡한 로직을 처리한다. 
+현실세계의 복잡한 문제를 처리하다 보면, 부수 효과(side-effect)가 동반되고,
+부수 효과가 있는 함수들을 함수의 합성으로 문제 없이 처리하기 위해서 
+Fuctor, Applicative, Monad, Maybe(Optional) 등의 개념이 계속 유도되는 것 같다.
 ```
 [Kotlin Functors, Applicatives, And Monads in Pictures](https://hackernoon.com/kotlin-functors-applicatives-and-monads-in-pictures-part-3-3-832d58d92445)  
 [Swift Functors, Applicatives, and Monads in Pictures](https://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/)
